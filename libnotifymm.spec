@@ -6,7 +6,6 @@
 %define major 7
 %define libname %mklibname notifymm %{api_version} %{major}
 %define libnamedev %mklibname -d notifymm %{api_version}
-%define libnamestaticdev %mklibname -s -d notifymm %{api_version}
 
 Name:		%name
 Summary:	C++ interface for libnotify
@@ -47,19 +46,6 @@ Provides:	%name-devel = %version-%release
 This package contains the headers and development files that are needed,
 when trying to develop or compile applications which need %{name}.
 
-
-%package	-n %{libnamestaticdev}
-Summary:	Static libraries of %{name}
-Group:		Development/GNOME and GTK+
-Requires:	%{libnamedev} = %{version}
-Provides:	%name%{api_version}-static-devel = %version-%release
-Provides:	%name-static-devel = %version-%release
-
-%description	-n %{libnamestaticdev}
-Libnotifymm provides a C++ interface to the libnotify library.
-
-This package contains the static libraries of %{name}.
-
 %prep
 %setup -q -n %{name}-%{version}
 
@@ -96,7 +82,3 @@ rm -rf %{buildroot}
 %dir %_libdir/%{name}/proc
 %dir %_libdir/%{name}/proc/m4
 %_libdir/%{name}/proc/m4/*.m4
-
-%files -n %{libnamestaticdev}
-%defattr(-, root, root)
-%{_libdir}/*.a
