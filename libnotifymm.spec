@@ -1,5 +1,5 @@
 %define name libnotifymm
-%define version 0.6.0
+%define version 0.6.1
 %define release %mkrel 1
 
 %define api_version 1.0
@@ -78,7 +78,3 @@ rm -rf %{buildroot}
 %{_libdir}/*.so
 %{_libdir}/%{name}-%{api_version}
 %{_libdir}/pkgconfig/%{name}-%{api_version}.pc
-%dir %_libdir/%{name}
-%dir %_libdir/%{name}/proc
-%dir %_libdir/%{name}/proc/m4
-%_libdir/%{name}/proc/m4/*.m4
