@@ -1,6 +1,6 @@
 %define name libnotifymm
 %define version 0.6.1
-%define release %mkrel 3
+%define release %mkrel 4
 
 %define api_version 1.0
 %define major 7
@@ -16,9 +16,10 @@ Group:		System/Libraries
 URL:		http://www.gnome.org
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source:		http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Patch0:		libnotifymm-0.6.1-bodgenewapi.patch
 BuildRequires:	glibmm2.4-devel >= 2.12.8
 BuildRequires:  gtkmm2.4-devel >= 2.10
-BuildRequires:	libnotify-devel >= 0.4.3
+BuildRequires:	libnotify-devel >= 0.6.0
 
 %description
 Libnotifymm provides a C++ interface to the libnotify library.
@@ -48,6 +49,7 @@ when trying to develop or compile applications which need %{name}.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p2
 
 %build
 %configure2_5x
