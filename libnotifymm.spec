@@ -58,14 +58,6 @@ when trying to develop or compile applications which need %{name}.
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-find %buildroot -name \*.la|xargs chmod 644
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
 
 %clean
 rm -rf %{buildroot}
@@ -80,7 +72,6 @@ rm -rf %{buildroot}
 %defattr(-, root, root)
 %doc AUTHORS ChangeLog
 %{_includedir}/%{name}-%api_version
-%attr(644,root,root) %{_libdir}/*.la
 %{_libdir}/*.so
 %{_libdir}/%{name}-%{api_version}
 %{_libdir}/pkgconfig/%{name}-%{api_version}.pc
