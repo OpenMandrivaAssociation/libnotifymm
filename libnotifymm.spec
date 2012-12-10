@@ -75,3 +75,50 @@ rm -rf %{buildroot}
 %{_libdir}/*.so
 %{_libdir}/%{name}-%{api_version}
 %{_libdir}/pkgconfig/%{name}-%{api_version}.pc
+
+
+%changelog
+* Sun Apr 15 2012 Götz Waschk <waschk@mandriva.org> 0.6.1-5mdv2012.0
++ Revision: 791084
+- cleanup
+- remove libtool archive
+- yearly rebuild
+
+  + Funda Wang <fwang@mandriva.org>
+    - add fedora patch to build with latest libnotify
+
+* Sun Sep 13 2009 Thierry Vignaud <tv@mandriva.org> 0.6.1-3mdv2011.0
++ Revision: 438721
+- rebuild
+
+* Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.6.1-2mdv2009.0
++ Revision: 267942
+- rebuild early 2009.0 package (before pixel changes)
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Wed Apr 09 2008 Götz Waschk <waschk@mandriva.org> 0.6.1-1mdv2009.0
++ Revision: 192431
+- new version
+- update file list
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Wed Oct 10 2007 Götz Waschk <waschk@mandriva.org> 0.6.0-1mdv2008.1
++ Revision: 96636
+- new version
+
+* Thu Sep 13 2007 Götz Waschk <waschk@mandriva.org> 0.5.0-1mdv2008.0
++ Revision: 84905
+- Import libnotifymm
+
+
+
+
+* Thu Sep 13 2007 Götz Waschk <waschk@mandriva.org> 0.5.0-1mdv2008.0
+- initial package
