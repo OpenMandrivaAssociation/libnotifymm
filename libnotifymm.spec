@@ -1,6 +1,6 @@
 %define name libnotifymm
 %define version 0.6.1
-%define release %mkrel 5
+%define release 6
 
 %define api_version 1.0
 %define major 7
