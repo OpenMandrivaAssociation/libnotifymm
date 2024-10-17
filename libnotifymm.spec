@@ -13,7 +13,7 @@ Version:	%{version}
 Release:	%{release}
 License:	LGPLv2+
 Group:		System/Libraries
-URL:		http://www.gnome.org
+URL:		https://www.gnome.org
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source:		http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		libnotifymm-0.6.1-bodgenewapi.patch
